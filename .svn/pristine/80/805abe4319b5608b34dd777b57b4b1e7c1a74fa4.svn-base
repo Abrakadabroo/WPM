@@ -1,0 +1,10 @@
+[
+    {
+        "merged": "C:\\home\\HSPAPP\\MAXREFDES100\\Application\\build\\intermediates\\res\\merged\\debug\\menu\\main.xml",
+        "source": "C:\\home\\HSPAPP\\MAXREFDES100\\Application\\src\\main\\res\\menu\\main.xml"
+    },
+    {
+        "merged": "C:\\home\\HSPAPP\\MAXREFDES100\\Application\\build\\intermediates\\res\\merged\\debug\\menu\\gatt_services.xml",
+        "source": "C:\\home\\HSPAPP\\MAXREFDES100\\Application\\src\\main\\res\\menu\\gatt_services.xml"
+    }
+]

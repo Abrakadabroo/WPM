@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="true"
+        jar="C:\home\HSPAPP\MAXREFDES100\Application\build\intermediates\exploded-aar\com.android.support\support-v13\24.1.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.1"
+        sha1="327f68d58bb39fb8b585150596b313541f8fdb87">
+        <dex dex="C:\home\HSPAPP\MAXREFDES100\Application\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-v13-24.1.1_f256d660501153ec5bf6a7ded7292f66ba436201\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\home\HSPAPP\MAXREFDES100\Application\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.1"
+        sha1="d71e6f14cdb5429f5d94437d9ffa482bfda04eba">
+        <dex dex="C:\home\HSPAPP\MAXREFDES100\Application\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run_4f7c91fe66bc0a1265f53e6c33c74162638aeb44\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\home\HSPAPP\MAXREFDES100\Application\build\intermediates\exploded-aar\com.android.support\support-v13\24.1.1\jars\libs\internal_impl-24.1.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.1"
+        sha1="ca74722504f90166103d01edcdfdb93192eb1cba">
+        <dex dex="C:\home\HSPAPP\MAXREFDES100\Application\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-24.1.1_ea1ca2ea48e1c734c0c79f431b6ab9532e1b6f4d\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\home\HSPAPP\MAXREFDES100\Application\build\intermediates\exploded-aar\com.android.support\support-v4\24.1.1\jars\libs\internal_impl-24.1.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.1"
+        sha1="f78c2f395cb096f9dc1dc07e729922b8fcd3c4f5">
+        <dex dex="C:\home\HSPAPP\MAXREFDES100\Application\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-24.1.1_c3e5e874c2d85b02d2fce18ead23973031f7c654\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\home\HSPAPP\MAXREFDES100\Application\build\intermediates\exploded-aar\com.android.support\support-v4\24.1.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.1"
+        sha1="6d7d803871e3203465f71a163e7af104f807b446">
+        <dex dex="C:\home\HSPAPP\MAXREFDES100\Application\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-v4-24.1.1_23c07a559af3953caf18d85e0f88da2b36c251f8\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\home\HSPAPP\MAXREFDES100\Application\build\intermediates\exploded-aar\com.android.support\appcompat-v7\24.1.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.1"
+        sha1="1256c10604bb098490eab070d76754ac5ceab35c">
+        <dex dex="C:\home\HSPAPP\MAXREFDES100\Application\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-appcompat-v7-24.1.1_1325b9b6b698f967d97079db8278b1c27efcf4f4\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\home\HSPAPP\MAXREFDES100\Application\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\24.1.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.1"
+        sha1="c936c1bd42f0c018c18920c7bec619ef056b24f8">
+        <dex dex="C:\home\HSPAPP\MAXREFDES100\Application\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-animated-vector-drawable-24.1.1_bf74fed696febbf49182be03f3746b2cdd353371\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\home\HSPAPP\MAXREFDES100\Application\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.1"
+        sha1="8dc50407fa0e74bbaa9ca356221e1f8b303386fb">
+        <dex dex="C:\home\HSPAPP\MAXREFDES100\Application\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run-bootstrap_3ad4bfcd0d3809184cf0f38fddd720d1ea5f1a84\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\home\HSPAPP\MAXREFDES100\Application\build\intermediates\exploded-aar\com.android.support\cardview-v7\24.1.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.1"
+        sha1="4add8aa95c9f4e9a2ad64b7e2bf08e97e28955c1">
+        <dex dex="C:\home\HSPAPP\MAXREFDES100\Application\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-cardview-v7-24.1.1_9f4d611ae66d0f0774a9aaa39cef8ec957f77f56\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\home\android-sdk-windows\extras\android\m2repository\com\android\support\support-annotations\24.1.1\support-annotations-24.1.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.1"
+        sha1="3af19f153122737b372622fa6c81dd11a1c6b999">
+        <dex dex="C:\home\HSPAPP\MAXREFDES100\Application\build\intermediates\transforms\dex\debug\folders\1000\10\support-annotations-24.1.1_829c1d6bd432f37366900074ca0beb6bf7d0ebda\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\home\HSPAPP\MAXREFDES100\Application\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\24.1.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.1"
+        sha1="f62e763609f65e47dc6c498760a4accf02776788">
+        <dex dex="C:\home\HSPAPP\MAXREFDES100\Application\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-vector-drawable-24.1.1_13571f044451bce177eb94f9e7e8820035e510d3\classes.dex" />
+    </item>
+
+</items>

@@ -1,0 +1,636 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_sensor1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#d7d7d7"
+    android:orientation="vertical"
+    android:weightSum="1"
+    tools:context="com.example.android.bluetoothlegatt.SensorActivity">
+
+    <GridLayout
+        android:id="@+id/deviceInformation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="5dp"
+        android:background="#f4f4f4"
+        android:columnCount="2"
+        android:useDefaultMargins="true">
+
+        <TextView
+            style="@style/GridLayoutTitleTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/label_device_address"
+            android:textSize="10sp" />
+
+        <TextView
+            android:id="@+id/device_address"
+            style="@style/GridLayoutDataTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="10sp" />
+
+        <TextView
+            style="@style/GridLayoutTitleTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/label_state"
+            android:textSize="10sp" />
+
+        <TextView
+            android:id="@+id/connection_state"
+            style="@style/GridLayoutDataTextView"
+            android:textSize="10sp" />
+    </GridLayout>
+
+
+    <!-- Temperature Top (WSN Temperature) -->
+    <RelativeLayout
+        android:id="@+id/relativeLayout1"
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="5dp"
+        android:background="#f4f4f4">
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_gravity="left"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="7dp"
+            android:background="@drawable/temperature" />
+
+        <LinearLayout
+            android:id="@+id/layout1"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="false"
+            android:layout_alignParentStart="false"
+            android:layout_marginLeft="5dp"
+            android:layout_toEndOf="@id/imageView"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="MAX30205 1"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="#0a5dff"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/textTempTop"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="---- F"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="#5e5e5e"
+                android:textSize="22dp" />
+
+        </LinearLayout>
+
+        <view
+            android:id="@+id/lineGraphingTemperature1"
+            class="graphing.LineGraphing"
+            android:layout_width="fill_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="right"
+            android:layout_marginRight="5dp"
+            android:layout_toEndOf="@id/layout1" />
+
+        <TextView
+            android:id="@+id/textTempTopRaw"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignStart="@+id/layout1"
+            android:text="-- --"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="#5e5e5e"
+            android:textSize="10dp" />
+    </RelativeLayout>
+
+    <!-- Temperature Bottom (WSN Humidity) -->
+    <RelativeLayout
+        android:id="@+id/relativeLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="5dp"
+        android:background="#f4f4f4">
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_gravity="left"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="7dp"
+            android:background="@drawable/temperature" />
+
+        <LinearLayout
+            android:id="@+id/layout2"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="false"
+            android:layout_alignParentStart="false"
+            android:layout_marginLeft="5dp"
+            android:layout_toEndOf="@id/imageView2"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="MAX30205 2"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="#0a5dff"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/textTempBottom"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="---- F"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="#5e5e5e"
+                android:textSize="22dp" />
+        </LinearLayout>
+
+        <view
+            android:id="@+id/lineGraphingTemperature2"
+            class="graphing.LineGraphing"
+            android:layout_width="fill_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="right"
+            android:layout_marginRight="5dp"
+            android:layout_toEndOf="@id/layout2" />
+
+        <TextView
+            android:id="@+id/textTempBottomRaw"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignStart="@+id/layout2"
+            android:text="-- --"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="#5e5e5e"
+            android:textSize="10dp" />
+    </RelativeLayout>
+
+
+    <!-- LIS2DH (WSN Light) -->
+    <RelativeLayout
+        android:id="@+id/relativeLayout3"
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="5dp"
+        android:background="#f4f4f4">
+
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="30dp"
+            android:layout_height="40dp"
+            android:layout_gravity="left"
+            android:layout_marginBottom="5dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/accelerometer2" />
+
+        <LinearLayout
+            android:id="@+id/layout3"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="false"
+            android:layout_alignParentStart="false"
+            android:layout_marginLeft="10dp"
+            android:layout_toEndOf="@id/imageView3"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="LIS2DH"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="#0a5dff"
+                android:textSize="17sp" />
+
+            <TextView
+                android:id="@+id/textLIS2DH_X"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="X: ---"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="#5e5e5e"
+                android:textSize="6dp" />
+
+            <TextView
+                android:id="@+id/textLIS2DH_Y"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Y: ---"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="#5e5e5e"
+                android:textSize="6dp" />
+
+            <TextView
+                android:id="@+id/textLIS2DH_Z"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Z: ---"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="#5e5e5e"
+                android:textSize="6dp" />
+        </LinearLayout>
+
+
+        <view
+            android:id="@+id/lineGraphingAccelerometer"
+            class="graphing.LineGraphing"
+            android:layout_width="fill_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="right"
+            android:layout_marginRight="5dp"
+            android:layout_toEndOf="@id/layout3"
+            android:visibility="visible" />
+
+
+        <TextView
+            android:id="@+id/textView7b"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignEnd="@+id/lineGraphingAccelerometer"
+            android:layout_centerVertical="true"
+            android:layout_toEndOf="@+id/layout3"
+            android:text="  Mission Stopped"
+            android:textAlignment="center"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="#bfbfbf"
+            android:visibility="invisible" />
+
+        <TextView
+            android:id="@+id/textLIS2DHRaw"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignStart="@+id/layout3"
+            android:text="-- --"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="#5e5e5e"
+            android:textSize="10dp" />
+
+
+    </RelativeLayout>
+
+
+    <!-- BMP280 (WSN Pressure) -->
+    <RelativeLayout
+        android:id="@+id/relativeLayout4"
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="5dp"
+        android:background="#f4f4f4">
+
+        <ImageView
+            android:id="@+id/imageView4"
+            android:layout_width="35dp"
+            android:layout_height="40dp"
+            android:layout_gravity="left"
+            android:layout_marginLeft="7dp"
+            android:layout_marginRight="3dp"
+            android:layout_marginTop="5dp"
+            android:layout_weight="1"
+            android:background="@drawable/pressure" />
+
+        <LinearLayout
+            android:id="@+id/layout4"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="false"
+            android:layout_alignParentStart="false"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="0dp"
+            android:layout_toEndOf="@id/imageView4"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="BMP280"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="#0a5dff"
+                android:textSize="17sp" />
+
+            <TextView
+                android:id="@+id/textPressure"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="---- Pa"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="#5e5e5e"
+                android:textSize="15dp" />
+
+            <TextView
+                android:id="@+id/textTemperature"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="---- F"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="#5e5e5e"
+                android:textSize="22dp"
+                android:visibility="gone" />
+        </LinearLayout>
+
+        <view
+            android:id="@+id/lineGraphingPressure"
+            class="graphing.LineGraphing"
+            android:layout_width="fill_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="right"
+            android:layout_marginRight="5dp"
+            android:layout_toEndOf="@id/layout4" />
+
+        <TextView
+            android:id="@+id/textPressureRaw"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignStart="@+id/layout4"
+            android:text="-- --"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="#5e5e5e"
+            android:textSize="10dp" />
+    </RelativeLayout>
+
+    <!-- PPG Rate -->
+    <RelativeLayout
+        android:id="@+id/relativeLayout7"
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="5dp"
+        android:background="#f4f4f4">
+
+        <ImageView
+            android:id="@+id/imageView7"
+            android:layout_width="35dp"
+            android:layout_height="40dp"
+            android:layout_gravity="left"
+            android:layout_marginLeft="7dp"
+            android:layout_marginRight="3dp"
+            android:layout_marginTop="5dp"
+            android:layout_weight="1"
+            android:background="@drawable/heart" />
+
+        <LinearLayout
+            android:id="@+id/layout7"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="false"
+            android:layout_alignParentStart="false"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="0dp"
+            android:layout_toEndOf="@id/imageView7"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textView7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="PPG HeartRate"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="#0a5dff"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/textPPGRate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="-- BPM"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="#5e5e5e"
+                android:textSize="16dp" />
+        </LinearLayout>
+
+        <view
+            android:id="@+id/lineGraphingPPGRate"
+            class="graphing.LineGraphing"
+            android:layout_width="fill_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="right"
+            android:layout_marginRight="5dp"
+            android:layout_toEndOf="@id/layout7"
+            android:visibility="visible" />
+
+        <TextView
+            android:id="@+id/textPPGRateRaw"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignStart="@+id/layout7"
+            android:text="-- --"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="#5e5e5e"
+            android:textSize="10dp" />
+
+        <TextView
+            android:id="@+id/clickStartBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/textPPGRateRaw"
+            android:layout_alignEnd="@+id/layout7"
+            android:layout_marginBottom="1dp"
+            android:background="#505050"
+            android:clickable="true"
+            android:onClick="onClick"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            android:text="Start"
+            android:textColor="#ffffff"
+            android:textSize="12sp"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/textView8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/imageView7"
+            android:layout_toEndOf="@+id/layout7"
+            android:text="  Mission Stopped"
+            android:textAlignment="center"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="#bfbfbf"
+            android:visibility="invisible" />
+    </RelativeLayout>
+
+
+    <!-- ECG Heartrate -->
+    <RelativeLayout
+        android:id="@+id/relativeLayout5"
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="5dp"
+        android:background="#f4f4f4">
+
+        <ImageView
+            android:id="@+id/imageView5"
+            android:layout_width="35dp"
+            android:layout_height="40dp"
+            android:layout_gravity="left"
+            android:layout_marginLeft="7dp"
+            android:layout_marginRight="3dp"
+            android:layout_marginTop="5dp"
+            android:layout_weight="1"
+            android:background="@drawable/heart" />
+
+        <LinearLayout
+            android:id="@+id/layout5"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="false"
+            android:layout_alignParentStart="false"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="0dp"
+            android:layout_toEndOf="@id/imageView5"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textView5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ECG HeartRate"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="#0a5dff"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/textHeartRate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="-- BPM"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="#5e5e5e"
+                android:textSize="16dp" />
+        </LinearLayout>
+
+        <view
+            android:id="@+id/lineGraphingHeartrate"
+            class="graphing.LineGraphing"
+            android:layout_width="fill_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="right"
+            android:layout_marginRight="5dp"
+            android:layout_toEndOf="@id/layout5"
+            android:visibility="visible" />
+
+        <TextView
+            android:id="@+id/textHeartRateRaw"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignStart="@+id/layout5"
+            android:text="-- --"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="#5e5e5e"
+            android:textSize="10dp" />
+
+        <TextView
+            android:id="@+id/clickStartBtnb"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/textHeartRateRaw"
+            android:layout_alignEnd="@+id/layout5"
+            android:layout_marginBottom="1dp"
+            android:background="#505050"
+            android:clickable="true"
+            android:onClick="onClick"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            android:text="Start"
+            android:textColor="#ffffff"
+            android:textSize="12sp"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/textView8b"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/imageView5"
+            android:layout_toEndOf="@+id/layout5"
+            android:text="  Mission Stopped"
+            android:textAlignment="center"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="#bfbfbf"
+            android:visibility="invisible" />
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout6"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="5dp"
+        android:background="#f4f4f4"
+        android:visibility="gone">
+
+        <Button
+            android:id="@+id/btnTest"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:text="test" />
+
+        <Button
+            android:id="@+id/btnUpdate"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_toEndOf="@+id/btnTest"
+            android:text="Update" />
+
+        <Button
+            android:id="@+id/btnSubscribe"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_toEndOf="@+id/btnUpdate"
+            android:text="Subscribe" />
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/clickStartBtn2"
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#00b2a9"
+        android:text="Start Mission" />
+
+</LinearLayout>

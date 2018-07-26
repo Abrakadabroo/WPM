@@ -1,0 +1,78 @@
+[
+    {
+        "merged": "C:\\home\\HSPAPP\\MAXREFDES100\\Application\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\ic_action_share.png",
+        "source": "C:\\home\\HSPAPP\\MAXREFDES100\\Application\\src\\main\\res\\drawable-hdpi\\ic_action_share.png"
+    },
+    {
+        "merged": "C:\\home\\HSPAPP\\MAXREFDES100\\Application\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\sliderscreen_max32620.png",
+        "source": "C:\\home\\HSPAPP\\MAXREFDES100\\Application\\src\\main\\res\\drawable-hdpi\\sliderscreen_max32620.png"
+    },
+    {
+        "merged": "C:\\home\\HSPAPP\\MAXREFDES100\\Application\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\ic_bluetooth_on.png",
+        "source": "C:\\home\\HSPAPP\\MAXREFDES100\\Application\\src\\main\\res\\drawable-hdpi\\ic_bluetooth_on.png"
+    },
+    {
+        "merged": "C:\\home\\HSPAPP\\MAXREFDES100\\Application\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\ic_launcher.png",
+        "source": "C:\\home\\HSPAPP\\MAXREFDES100\\Application\\src\\main\\res\\drawable-hdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\home\\HSPAPP\\MAXREFDES100\\Application\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\sliderscreen_sensors.png",
+        "source": "C:\\home\\HSPAPP\\MAXREFDES100\\Application\\src\\main\\res\\drawable-hdpi\\sliderscreen_sensors.png"
+    },
+    {
+        "merged": "C:\\home\\HSPAPP\\MAXREFDES100\\Application\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\heart.png",
+        "source": "C:\\home\\HSPAPP\\MAXREFDES100\\Application\\src\\main\\res\\drawable-hdpi\\heart.png"
+    },
+    {
+        "merged": "C:\\home\\HSPAPP\\MAXREFDES100\\Application\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\tile.9.png",
+        "source": "C:\\home\\HSPAPP\\MAXREFDES100\\Application\\src\\main\\res\\drawable-hdpi\\tile.9.png"
+    },
+    {
+        "merged": "C:\\home\\HSPAPP\\MAXREFDES100\\Application\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\popup_green.9.png",
+        "source": "C:\\home\\HSPAPP\\MAXREFDES100\\Application\\src\\main\\res\\drawable-hdpi\\popup_green.9.png"
+    },
+    {
+        "merged": "C:\\home\\HSPAPP\\MAXREFDES100\\Application\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\ic_settings_black_24dp.png",
+        "source": "C:\\home\\HSPAPP\\MAXREFDES100\\Application\\src\\main\\res\\drawable-hdpi\\ic_settings_black_24dp.png"
+    },
+    {
+        "merged": "C:\\home\\HSPAPP\\MAXREFDES100\\Application\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\popup_blue.9.png",
+        "source": "C:\\home\\HSPAPP\\MAXREFDES100\\Application\\src\\main\\res\\drawable-hdpi\\popup_blue.9.png"
+    },
+    {
+        "merged": "C:\\home\\HSPAPP\\MAXREFDES100\\Application\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\popup_red.9.png",
+        "source": "C:\\home\\HSPAPP\\MAXREFDES100\\Application\\src\\main\\res\\drawable-hdpi\\popup_red.9.png"
+    },
+    {
+        "merged": "C:\\home\\HSPAPP\\MAXREFDES100\\Application\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\accelerometer2.png",
+        "source": "C:\\home\\HSPAPP\\MAXREFDES100\\Application\\src\\main\\res\\drawable-hdpi\\accelerometer2.png"
+    },
+    {
+        "merged": "C:\\home\\HSPAPP\\MAXREFDES100\\Application\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\ic_device_ibeacon.png",
+        "source": "C:\\home\\HSPAPP\\MAXREFDES100\\Application\\src\\main\\res\\drawable-hdpi\\ic_device_ibeacon.png"
+    },
+    {
+        "merged": "C:\\home\\HSPAPP\\MAXREFDES100\\Application\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\sliderscreen_max30101.png",
+        "source": "C:\\home\\HSPAPP\\MAXREFDES100\\Application\\src\\main\\res\\drawable-hdpi\\sliderscreen_max30101.png"
+    },
+    {
+        "merged": "C:\\home\\HSPAPP\\MAXREFDES100\\Application\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\ic_bluetooth.png",
+        "source": "C:\\home\\HSPAPP\\MAXREFDES100\\Application\\src\\main\\res\\drawable-hdpi\\ic_bluetooth.png"
+    },
+    {
+        "merged": "C:\\home\\HSPAPP\\MAXREFDES100\\Application\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\accelerometer.png",
+        "source": "C:\\home\\HSPAPP\\MAXREFDES100\\Application\\src\\main\\res\\drawable-hdpi\\accelerometer.png"
+    },
+    {
+        "merged": "C:\\home\\HSPAPP\\MAXREFDES100\\Application\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\sliderscreen_max30001.png",
+        "source": "C:\\home\\HSPAPP\\MAXREFDES100\\Application\\src\\main\\res\\drawable-hdpi\\sliderscreen_max30001.png"
+    },
+    {
+        "merged": "C:\\home\\HSPAPP\\MAXREFDES100\\Application\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\pressure.png",
+        "source": "C:\\home\\HSPAPP\\MAXREFDES100\\Application\\src\\main\\res\\drawable-hdpi\\pressure.png"
+    },
+    {
+        "merged": "C:\\home\\HSPAPP\\MAXREFDES100\\Application\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\temperature.png",
+        "source": "C:\\home\\HSPAPP\\MAXREFDES100\\Application\\src\\main\\res\\drawable-hdpi\\temperature.png"
+    }
+]
