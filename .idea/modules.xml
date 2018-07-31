@@ -3,7 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Application/Application.iml" filepath="$PROJECT_DIR$/Application/Application.iml" />
-      <module fileurl="file://$PROJECT_DIR$/MAXREFDES100_Android_SRC-2.iml" filepath="$PROJECT_DIR$/MAXREFDES100_Android_SRC-2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/hSensorAndroidCode.iml" filepath="$PROJECT_DIR$/hSensorAndroidCode.iml" />
     </modules>
   </component>
 </project>
