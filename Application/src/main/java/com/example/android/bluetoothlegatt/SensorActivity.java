@@ -134,13 +134,14 @@ public class SensorActivity extends Activity {
 
     /// define the UUIDs of the HSP BLE service and characteristics
     public final static String BLE_MAXIM_HSP_SERVICE = "5c6e40e8-3b7f-4286-a52f-daec46abe851"; // hsp service
-    public final static String BLE_MAXIM_HSP_TEMPERATURE_TOP_CHARACTERISTIC = "621a00e3-b093-46bf-aadc-abe4c648c569"; // temp top //3544531b-00c3-4342-9755-b56abe8e6c67
+    public final static String BLE_MAXIM_HSP_TEMPERATURE_TOP_CHARACTERISTIC = "3544531b-00c3-4342-9755-b56abe8e6c67"; // temp top
     public final static String BLE_MAXIM_HSP_TEMPERATURE_BOTTOM_CHARACTERISTIC = "3544531b-00c3-4342-9755-b56abe8e6a66"; // temp bottom
     public final static String BLE_MAXIM_HSP_ACCEL_CHARACTERISTIC = "e6c9da1a-8096-48bc-83a4-3fca383705af"; //accel
-    public final static String BLE_MAXIM_HSP_PRESSURE_CHARACTERISTIC = "1d8a1932-da49-49ad-91d8-800832e7e940";  // pressure
-    public final static String BLE_MAXIM_HSP_HEARTRATE_CHARACTERISTIC = "3544531b-00c3-4342-9755-b56abe8e6c67";  // heart rate
+    public final static String BLE_MAXIM_HSP_PRESSURE_CHARACTERISTIC = "aed5b130-7d0a-11e8-adc0-fa7ae01bbebc";  // pressure 1d8a1932-da49-49ad-91d8-800832e7e940
+    public final static String BLE_MAXIM_HSP_HEARTRATE_CHARACTERISTIC = "621a00e3-b093-46bf-aadc-abe4c648c569";  // heart rate
+    public final static String BLE_MAXIM_HSP_PPGRate_CHARACTERISTIC = "1d8a1932-da49-49ad-91d8-800832e7e940"; //ppg aed5b130-7d0a-11e8-adc0-fa7ae01bbebc
     public final static String BLE_MAXIM_HSP_COMMAND_CHARACTERISTIC = "36e55e37-6b5b-420b-9107-0d34a0e8675a"; // command
-    public final static String BLE_MAXIM_HSP_PPGRate_CHARACTERISTIC = "bed5b130-7d0a-11e8-adc0-fa7ae01bbebc"; //ppg
+
 
 
     /**
@@ -150,8 +151,7 @@ public class SensorActivity extends Activity {
         for (List<BluetoothGattCharacteristic> chars : mGattCharacteristics) {
             for (BluetoothGattCharacteristic cha : chars) {
                 if (cha.getService().getUuid().compareTo(UUID.fromString(BLE_MAXIM_HSP_SERVICE)) == 0) {
-                    if (cha.getUuid().compareTo(UUID.fromString(BLE_MAXIM_HSP_TEMPERATURE_TOP_CHARACTERISTIC)) == 0) {
-                        Log.e("BLETag","PPG UUID detected");
+                    if (cha.getUuid().compareTo(UUID.fromString(BLE_MAXIM_HSP_TEMPERATURE_TOP_CHARACTERISTIC)) == 0) { ;
                         mBluetoothLeService.Subscribe(cha.getService().getUuid(), cha.getUuid());
                     }
                     if (cha.getUuid().compareTo(UUID.fromString(BLE_MAXIM_HSP_TEMPERATURE_BOTTOM_CHARACTERISTIC)) == 0) {
@@ -165,8 +165,10 @@ public class SensorActivity extends Activity {
                     }
                     if (cha.getUuid().compareTo(UUID.fromString(BLE_MAXIM_HSP_PRESSURE_CHARACTERISTIC)) == 0) {
                         mBluetoothLeService.Subscribe(cha.getService().getUuid(), cha.getUuid());
+                        Log.e("BLETag","Pressure UUID detected");
                     }
                     if (cha.getUuid().compareTo(UUID.fromString(BLE_MAXIM_HSP_PPGRate_CHARACTERISTIC)) == 0) {
+                        Log.e("BLETag","PPG UUID detected");
                         mBluetoothLeService.Subscribe(cha.getService().getUuid(), cha.getUuid());
                     }
                 }
@@ -201,8 +203,8 @@ public class SensorActivity extends Activity {
         mBtnSubscribe = (Button) findViewById(R.id.btnSubscribe);
         mClickStartBtn = (TextView) findViewById(R.id.clickStartBtn);
         mClickStartBtn2 = (TextView) findViewById(R.id.clickStartBtn2);
-        mAccelMissionStopped = (TextView) findViewById(R.id.textView7);
-        mECGMissionStopped = (TextView) findViewById(R.id.textView8);
+        mAccelMissionStopped = (TextView) findViewById(R.id.textView3b);
+        mECGMissionStopped = (TextView) findViewById(R.id.textView6b);
         mTextPPGRateRaw = (TextView) findViewById(R.id.textPPGRateRaw);
         mTextPPGRate = (TextView) findViewById(R.id.textPPGRate);
 
@@ -534,8 +536,8 @@ public class SensorActivity extends Activity {
         //PPG Calculation code goes here
         if (characteristic.compareTo(UUID.fromString(BLE_MAXIM_HSP_PPGRate_CHARACTERISTIC)) == 0) {
             mTextPPGRateRaw.setText(str);
-            value = CalculateHeartRate(data);
-            mTextPPGRate.setText(String.format("%.1f", value));
+            value = ToFahrenheit(ToTemperature(data));
+            mTextPPGRate.setText(String.format("%.1f", value) + "F");
             linePointCollectionPPGRate.addpoint(value);
             lineGraphingPPGRate.plotPointCollection();
         }
