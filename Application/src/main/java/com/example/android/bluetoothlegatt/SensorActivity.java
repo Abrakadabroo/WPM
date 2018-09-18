@@ -80,9 +80,9 @@ public class SensorActivity extends Activity {
     protected TextView mTextLIS2DH_Y;
     protected TextView mTextLIS2DH_Z;
     protected TextView mTextLIS2DHRaw;
-    protected TextView mTextPressure;
-    protected TextView mTextTemperature;
-    protected TextView mTextPressureRaw;
+    //protected TextView mTextPressure;
+    //protected TextView mTextTemperature;
+    //protected TextView mTextPressureRaw;
     protected TextView mTextHeartRate;
     protected TextView mTextHeartRateRaw;
     protected TextView mTextPPGRate;
@@ -100,8 +100,8 @@ public class SensorActivity extends Activity {
     LinePointCollection linePointCollectionZ;
 
     /// pressure
-    protected LineGraphing lineGraphingPressure;
-    LinePointCollection linePointCollectionPressure;
+    ///protected LineGraphing lineGraphingPressure;
+    ///LinePointCollection linePointCollectionPressure;
 
     /// temperature 1
     protected LineGraphing lineGraphingTemperature1;
@@ -137,7 +137,7 @@ public class SensorActivity extends Activity {
     public final static String BLE_MAXIM_HSP_TEMPERATURE_TOP_CHARACTERISTIC = "3544531b-00c3-4342-9755-b56abe8e6c67"; // temp top
     public final static String BLE_MAXIM_HSP_TEMPERATURE_BOTTOM_CHARACTERISTIC = "3544531b-00c3-4342-9755-b56abe8e6a66"; // temp bottom
     public final static String BLE_MAXIM_HSP_ACCEL_CHARACTERISTIC = "e6c9da1a-8096-48bc-83a4-3fca383705af"; //accel
-    public final static String BLE_MAXIM_HSP_PRESSURE_CHARACTERISTIC = "aed5b130-7d0a-11e8-adc0-fa7ae01bbebc";  // pressure 1d8a1932-da49-49ad-91d8-800832e7e940
+    ///public final static String BLE_MAXIM_HSP_PRESSURE_CHARACTERISTIC = "aed5b130-7d0a-11e8-adc0-fa7ae01bbebc";  // pressure 1d8a1932-da49-49ad-91d8-800832e7e940
     public final static String BLE_MAXIM_HSP_HEARTRATE_CHARACTERISTIC = "621a00e3-b093-46bf-aadc-abe4c648c569";  // heart rate
     public final static String BLE_MAXIM_HSP_PPGRate_CHARACTERISTIC = "1d8a1932-da49-49ad-91d8-800832e7e940"; //ppg aed5b130-7d0a-11e8-adc0-fa7ae01bbebc
     public final static String BLE_MAXIM_HSP_COMMAND_CHARACTERISTIC = "36e55e37-6b5b-420b-9107-0d34a0e8675a"; // command
@@ -163,10 +163,10 @@ public class SensorActivity extends Activity {
                     if (cha.getUuid().compareTo(UUID.fromString(BLE_MAXIM_HSP_HEARTRATE_CHARACTERISTIC)) == 0) {
                         mBluetoothLeService.Subscribe(cha.getService().getUuid(), cha.getUuid());
                     }
-                    if (cha.getUuid().compareTo(UUID.fromString(BLE_MAXIM_HSP_PRESSURE_CHARACTERISTIC)) == 0) {
-                        mBluetoothLeService.Subscribe(cha.getService().getUuid(), cha.getUuid());
-                        Log.e("BLETag","Pressure UUID detected");
-                    }
+                    //if (cha.getUuid().compareTo(UUID.fromString(BLE_MAXIM_HSP_PRESSURE_CHARACTERISTIC)) == 0) {
+                    //    mBluetoothLeService.Subscribe(cha.getService().getUuid(), cha.getUuid());
+                    //    Log.e("BLETag","Pressure UUID detected");
+                    //}
                     if (cha.getUuid().compareTo(UUID.fromString(BLE_MAXIM_HSP_PPGRate_CHARACTERISTIC)) == 0) {
                         Log.e("BLETag","PPG UUID detected");
                         mBluetoothLeService.Subscribe(cha.getService().getUuid(), cha.getUuid());
@@ -195,9 +195,9 @@ public class SensorActivity extends Activity {
         mTextLIS2DH_Y = (TextView) findViewById(R.id.textLIS2DH_Y);
         mTextLIS2DH_Z = (TextView) findViewById(R.id.textLIS2DH_Z);
         mTextLIS2DHRaw = (TextView) findViewById(R.id.textLIS2DHRaw);
-        mTextPressure = (TextView) findViewById(R.id.textPressure);
-        mTextTemperature = (TextView) findViewById(R.id.textTemperature);
-        mTextPressureRaw = (TextView) findViewById(R.id.textPressureRaw);
+        //mTextPressure = (TextView) findViewById(R.id.textPressure);
+        //mTextTemperature = (TextView) findViewById(R.id.textTemperature);
+        //mTextPressureRaw = (TextView) findViewById(R.id.textPressureRaw);
         mTextHeartRate = (TextView) findViewById(R.id.textHeartRate);
         mTextHeartRateRaw = (TextView) findViewById(R.id.textHeartRateRaw);
         mBtnSubscribe = (Button) findViewById(R.id.btnSubscribe);
@@ -211,7 +211,7 @@ public class SensorActivity extends Activity {
         /// accelerometer
         lineGraphingAccelerometer = (LineGraphing) findViewById(R.id.lineGraphingAccelerometer);
         /// pressure
-        lineGraphingPressure = (LineGraphing) findViewById(R.id.lineGraphingPressure);
+        ///lineGraphingPressure = (LineGraphing) findViewById(R.id.lineGraphingPressure);
         /// temperature 1
         lineGraphingTemperature1 = (LineGraphing) findViewById(R.id.lineGraphingTemperature1);
         /// temperature 2
@@ -257,8 +257,8 @@ public class SensorActivity extends Activity {
         lineGraphingAccelerometer.addPointCollection(linePointCollectionZ);
 
         // setup the pressure linegraph collections
-        linePointCollectionPressure = new LinePointCollection(Color.BLACK, 20);
-        lineGraphingPressure.addPointCollection(linePointCollectionPressure);
+        ///linePointCollectionPressure = new LinePointCollection(Color.BLACK, 20);
+        ///lineGraphingPressure.addPointCollection(linePointCollectionPressure);
 
         // setup the temperature 1 linegraph collections
         linePointCollectionTemperature1 = new LinePointCollection(Color.BLACK, 20);
@@ -276,7 +276,6 @@ public class SensorActivity extends Activity {
 
         linePointCollectionPPGRate = new LinePointCollection(Color.BLACK, 20);
         lineGraphingPPGRate.addPointCollection(linePointCollectionPPGRate);
-
 
 
     }
@@ -460,6 +459,50 @@ public class SensorActivity extends Activity {
         return value;
     }
 
+    private float CalculatePPGData(byte [] data) {
+
+
+        long value = 0;
+        //int i;
+        /*int data_buff[]= {0,0,0};
+
+        for (i=0; i<3; i++) {
+            if (data[i] < 0) {
+                data_buff[i] =  (256 + data[i]);
+            }
+            else {
+                data_buff[i] = data[i];
+            }
+        }*/
+        value |= data[0] & 0xFF;
+        value <<= 8;
+        value |= data[1] & 0xFF;
+        value <<= 8;
+        value |= data[2] & 0xFF;
+        value <<= 8;
+        //value |= data[3] & 0xFF;
+        //value <<= 8;
+
+        Long intermediate = value;
+
+        float result;
+        result = Float.valueOf(intermediate.toString());
+
+        //value = (float) ( data_buff[0] << 16) + (float) (data_buff[1] << 8) + ((float) data_buff[2]);
+        //value = ((int) data[0] << 16) +  ((int) data[1] << 8) + data[2]);
+
+
+        //value = data[0] + data[1] + data[2];
+
+        //Log.e("BLETag","PPG UUID detected")
+        //Log.v("data",data[0]);
+        //Log.d("ADebugTag", "Value: " + Float.toString(data[0]));
+
+        //value = data[3];
+        return result;
+
+    }
+
     /**
      * Update the UI for a given characteristic uuid using data
      * This will update all of the text view values for the given characteristic
@@ -474,19 +517,20 @@ public class SensorActivity extends Activity {
         float value = 0;
         String str = "";
         str = bytesToHex(data);
+
         // temperature top
         if (characteristic.compareTo(UUID.fromString(BLE_MAXIM_HSP_TEMPERATURE_TOP_CHARACTERISTIC)) == 0) {
             mTextTempTopRaw.setText(str);
-            value = ToFahrenheit(ToTemperature(data));
-            mTextTempTop.setText(String.format("%.1f", value) + "F");
+            value = ToTemperature(data);//value = ToFahrenheit(ToTemperature(data));
+            mTextTempTop.setText(String.format("%.1f", value) + "C");
             linePointCollectionTemperature1.addpoint(value);
             lineGraphingTemperature1.plotPointCollection();
         }
         // temperature bottom
         if (characteristic.compareTo(UUID.fromString(BLE_MAXIM_HSP_TEMPERATURE_BOTTOM_CHARACTERISTIC)) == 0) {
             mTextTempBottomRaw.setText(str);
-            value = ToFahrenheit(ToTemperature(data));
-            mTextTempBottom.setText(String.format("%.1f", value) + "F");
+            value = ToTemperature(data); //value = ToFahrenheit(ToTemperature(data));
+            mTextTempBottom.setText(String.format("%.1f", value) + "C");
             linePointCollectionTemperature2.addpoint(value);
             lineGraphingTemperature2.plotPointCollection();
         }
@@ -505,7 +549,7 @@ public class SensorActivity extends Activity {
             lineGraphingAccelerometer.plotPointCollection();
         }
         // pressure
-        if (characteristic.compareTo(UUID.fromString(BLE_MAXIM_HSP_PRESSURE_CHARACTERISTIC)) == 0) {
+        /*if (characteristic.compareTo(UUID.fromString(BLE_MAXIM_HSP_PRESSURE_CHARACTERISTIC)) == 0) {
             String pressureStr = "";
             int n = 0;
             int bits;
@@ -524,7 +568,7 @@ public class SensorActivity extends Activity {
             mTextPressure.setText(String.format("%.1f", pressure) + "Pa");
             linePointCollectionPressure.addpoint(pressure);
             lineGraphingPressure.plotPointCollection();
-        }
+        }*/
         // heartrate
         if (characteristic.compareTo(UUID.fromString(BLE_MAXIM_HSP_HEARTRATE_CHARACTERISTIC)) == 0) {
             mTextHeartRateRaw.setText(str);
@@ -536,8 +580,29 @@ public class SensorActivity extends Activity {
         //PPG Calculation code goes here
         if (characteristic.compareTo(UUID.fromString(BLE_MAXIM_HSP_PPGRate_CHARACTERISTIC)) == 0) {
             mTextPPGRateRaw.setText(str);
-            value = ToFahrenheit(ToTemperature(data));
-            mTextPPGRate.setText(String.format("%.1f", value) + "F");
+            int num;
+            float HR;
+
+            //float Real_HR;
+
+            //value = data;
+                //str = bytesToHex(data);
+                //for(int i=0; i< 2; i++) {
+                //    value = str[i];
+                //}
+            value = CalculatePPGData(data);
+
+            /*num = (int) value;
+            if (num < 310000){
+                HR = 45.0f;
+            }
+            else {
+                //realHeartRate = 65;
+                HR = (num - 310000)/100;
+                }*/
+
+
+            mTextPPGRate.setText(String.format("%.1f",value) + "BPM"); // Here is where the actual heart rate is displayed. Put Fourier Transform code here.
             linePointCollectionPPGRate.addpoint(value);
             lineGraphingPPGRate.plotPointCollection();
         }

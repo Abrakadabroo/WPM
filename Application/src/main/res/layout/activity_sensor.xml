@@ -297,93 +297,12 @@
 
 
     <!-- BMP280 (WSN Pressure) -->
-    <RelativeLayout
-        android:id="@+id/relativeLayout4"
-        android:layout_width="match_parent"
-        android:layout_height="65dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        android:layout_marginTop="5dp"
-        android:background="#f4f4f4">
-
-        <ImageView
-            android:id="@+id/imageView4"
-            android:layout_width="35dp"
-            android:layout_height="40dp"
-            android:layout_gravity="left"
-            android:layout_marginLeft="7dp"
-            android:layout_marginRight="3dp"
-            android:layout_marginTop="5dp"
-            android:layout_weight="1"
-            android:background="@drawable/pressure" />
-
-        <LinearLayout
-            android:id="@+id/layout4"
-            android:layout_width="100dp"
-            android:layout_height="wrap_content"
-            android:layout_alignParentEnd="false"
-            android:layout_alignParentStart="false"
-            android:layout_marginLeft="5dp"
-            android:layout_marginTop="0dp"
-            android:layout_toEndOf="@id/imageView4"
-            android:layout_weight="1"
-            android:orientation="vertical">
-
-            <TextView
-                android:id="@+id/textView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="BMP280"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:textColor="#0a5dff"
-                android:textSize="17sp" />
-
-            <TextView
-                android:id="@+id/textPressure"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="---- Pa"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:textColor="#5e5e5e"
-                android:textSize="15dp" />
-
-            <TextView
-                android:id="@+id/textTemperature"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="---- F"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:textColor="#5e5e5e"
-                android:textSize="22dp"
-                android:visibility="gone" />
-        </LinearLayout>
-
-        <view
-            android:id="@+id/lineGraphingPressure"
-            class="graphing.LineGraphing"
-            android:layout_width="fill_parent"
-            android:layout_height="match_parent"
-            android:layout_gravity="right"
-            android:layout_marginRight="5dp"
-            android:layout_toEndOf="@id/layout4" />
-
-        <TextView
-            android:id="@+id/textPressureRaw"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_alignStart="@+id/layout4"
-            android:text="-- --"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:textColor="#5e5e5e"
-            android:textSize="10dp" />
-    </RelativeLayout>
 
     <!-- PPG Rate -->
     <RelativeLayout
         android:id="@+id/relativeLayout5"
         android:layout_width="match_parent"
-        android:layout_height="65dp"
+        android:layout_height="95dp"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
         android:layout_marginTop="5dp"
@@ -487,7 +406,7 @@
     <RelativeLayout
         android:id="@+id/relativeLayout6"
         android:layout_width="match_parent"
-        android:layout_height="65dp"
+        android:layout_height="104dp"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
         android:layout_marginTop="5dp"
@@ -520,7 +439,7 @@
                 android:id="@+id/textView6"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="ECG HeartRate"
+                android:text="EEG"
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:textColor="#0a5dff"
                 android:textSize="12sp" />
@@ -629,7 +548,7 @@
         android:id="@+id/clickStartBtn2"
         style="?android:attr/buttonStyleSmall"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="64dp"
         android:backgroundTint="#00b2a9"
         android:text="Start Mission" />
 
